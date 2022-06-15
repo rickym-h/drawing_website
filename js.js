@@ -61,25 +61,25 @@ document.addEventListener("mouseup", function (e) {
 const myFunnyButton = document.querySelector("#jokeButton");
 
 function isPartOfPic(row, col) {
-    let myPic =
-        [[0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,1,0,0,0,0],
-        [0,0,0,0,0,1,0,0,0,0],
-        [0,0,0,0,0,1,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0]]
+    let myPic1 = [
+        [0,0,1,1,1,1,0,0],
+        [0,1,0,0,0,0,1,0],
+        [0,1,1,0,0,0,1,1],
+        [1,0,0,1,0,0,1,1],
+        [0,1,1,0,0,0,1,1],
+        [0,1,0,0,0,0,1,0],
+        [0,1,0,1,1,0,1,0],
+        [0,0,1,0,0,1,0,0],
+    ]
 
-    return myPic[row][col] === 1;
+    return myPic1[row][col] === 1;
 
 }
 
 myFunnyButton.addEventListener("click", function(e){
-    let size = 10
+    let size = 8
     // delete old nodes
+    const container = document.querySelector("#container");
     container.innerHTML = '';
 
     //set styling taking into account the new nodes

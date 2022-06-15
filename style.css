@@ -16,12 +16,10 @@ body {
     height: 80%;
 
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .defaultNode {
-    background-color: black;
+    background-color: darkgray;
     border: 1px solid green;
 
     /*width: 100%;*/

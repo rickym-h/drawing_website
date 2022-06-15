@@ -25,3 +25,8 @@ body {
     /*width: 100%;*/
     /*height: 5px;*/
 }
+
+.colouredNode {
+    background-color: aqua;
+    border: 1px solid green;
+}

@@ -24,10 +24,22 @@ function generateGrid() {
             const myNode = document.createElement("div");
             myNode.classList.toggle("defaultNode");
 
-            myNode.addEventListener("mousedown", function(e) {
-                console.log(e);
-                e.target.classList.toggle("defaultNode")
-                e.target.classList.toggle("colouredNode")
+
+            myNode.addEventListener("mouseenter", function (e) {
+                if (IS_MOUSE_PRESSED) {
+                    e.target.classList.remove("defaultNode");
+                    e.target.classList.add("colouredNode");
+                }
+            })
+
+            myNode.addEventListener("mousedown", function (e) {
+                e.target.classList.remove("defaultNode");
+                e.target.classList.add("colouredNode");
+                IS_MOUSE_PRESSED = true;
+            })
+
+            myNode.addEventListener("mouseup", function (e) {
+                IS_MOUSE_PRESSED = false;
             })
 
 
@@ -39,3 +51,10 @@ function generateGrid() {
 
 const myButton = document.querySelector("#myButton");
 myButton.addEventListener("click", generateGrid);
+
+document.addEventListener("mousedown", function (e) {
+    IS_MOUSE_PRESSED = true;
+})
+document.addEventListener("mouseup", function (e) {
+    IS_MOUSE_PRESSED = false;
+})
